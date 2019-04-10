@@ -1,0 +1,30 @@
+<h1>Listing Examples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Has good name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for example <- @examples do %>
+    <tr>
+      <td><%= example.name %></td>
+      <td><%= example.type %></td>
+      <td><%= example.has_good_name %></td>
+
+      <td>
+        <%= link "Show", to: Routes.example_path(@conn, :show, example) %>
+        <%= link "Edit", to: Routes.example_path(@conn, :edit, example) %>
+        <%= link "Delete", to: Routes.example_path(@conn, :delete, example), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Example", to: Routes.example_path(@conn, :new) %></span>

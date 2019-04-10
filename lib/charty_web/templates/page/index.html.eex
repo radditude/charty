@@ -1,0 +1,3 @@
+<h2>Examples</h2>
+<canvas id="exampleChart"></canvas>
+<span id="exampleData" data-examples="<%= @examples %>" data-counts="<%= @example_counts %>" />
